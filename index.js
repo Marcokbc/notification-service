@@ -28,7 +28,7 @@ const sendEmail = async ({ to, subject, html, text }) => {
 
 const startConsumer = async () => {
   try {
-    const connection = await amqp.connect("amqp://localhost");
+    const connection = await amqp.connect("amqp://rabbitmq:5672");
     const channel = await connection.createChannel();
     const queue = "email_queue";
 
